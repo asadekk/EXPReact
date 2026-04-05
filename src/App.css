@@ -1,0 +1,52 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.input{
+  display: flex;
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  margin: 50px 50px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-size: medium;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  align-items: center;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+.input:hover{
+  width: 310px;
+  height: 60px;
+  border: none;
+}
+.modal{
+  margin: auto;
+  justify-content: center;
+  width: 400px;
+  height: 620px;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin-left: 30%;
+  transition: 0.5s;
+}
+.modal:hover{
+  background-color: rgb(245, 236, 224);
+}
