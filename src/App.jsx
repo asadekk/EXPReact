@@ -1,49 +1,44 @@
-
-import { useState } from 'react'
+import { useEffect, useState } from "react";
 import './App.css'
-import Pageitem from './companet/Pageitem'
-import { v4 as uuidv4 } from 'uuid';
-
 function App() {
+  const [users, setUsers] = useState([]);
 
-  const [click, setClick] = useState("")
-  const [date, setDate] = useState("")
-
-  const binDelet  = () => {
-    setClick("")
-    setDate("")
-  }
-
-  // const handelonChange = (e) => {
-  //   setClick(e.target.value);
-  // }
-
-
-  const handelSubmit = (e) => {
-    e.preventDefault()
-    const event = {
-      title:click,
-      date:date,
-      id:uuidv4()
-    }
-    console.log(event);
-    binDelet()
-  }
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, []);
 
   return (
-    <>
-      <div className='modal' onSubmit={handelSubmit}>
-        <Pageitem ism="Asadbekk" />
-        <br />
-        <input className='input' type="text" onChange={(e) => setClick(e.target.value)} value={click} />
-        <input className='input' type="date" onChange={(e) => setDate(e.target.value)} value={date} />
-        {/* <h1 className='input'>Title:{click}</h1>
-        <h1 className='input'>Date:{date}</h1>
-        <button className='input' onClick={binDelet}>BIN</button> */}
-        <button onClick={handelSubmit} className='input'>Submit</button>
-      </div>
-    </>
-  )
+    <div>
+      <table border="1px solid black">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>City</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>{user.name}</td>
+              <td>{user.username}</td>
+              <td>{user.phone}</td>
+              <td>{user.email}</td>
+              <td>{user.company.name}</td>
+              <td>{user.address.city}</td>
+              <td>{user.website}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
-export default App
+export default App;

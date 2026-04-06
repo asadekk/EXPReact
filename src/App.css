@@ -19,11 +19,11 @@
 
 .input{
   display: flex;
-  width: 300px;
+  width: 250px;
   height: 50px;
   border-radius: 25px;
   border: none;
-  margin: 50px 50px;
+  margin: 10px 50px;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   font-size: medium;
@@ -33,9 +33,11 @@
   padding-left: 20px;
 }
 .input:hover{
-  width: 310px;
+  width: auto;
   height: 60px;
   border: none;
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 .modal{
   margin: auto;
