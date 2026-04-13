@@ -11,6 +11,7 @@ function PageNotFound() {
       <Link to="/" className="btn">
         Go Home
       </Link>
+      <Link to={'/Home'}>qaytish</Link>
     </div>
   );
 }

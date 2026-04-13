@@ -12,7 +12,7 @@ function Home() {
     }, []);
     return (
         <div>
-           <Link to={'/'}>Go home</Link>
+          
             <table border="1px solid black">
                 <thead>
                     <tr>
@@ -35,6 +35,7 @@ function Home() {
                             <td>{user.company.name}</td>
                             <td>{user.address.city}</td>
                             <td>{user.website}</td>
+                            <td><Link to={`/Page/${user.id}`}>More</Link></td>
                         </tr>
                     ))}
                 </tbody>

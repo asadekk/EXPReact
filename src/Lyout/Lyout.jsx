@@ -8,14 +8,14 @@ function Layout() {
                 <h2 className="logo">App</h2>
 
                 <div className="nav-links">
-                    <Link to={'/'}>Item</Link>
+                    <Link to={'/Artikal'}>Artikal</Link>
                     <Link to="/Home">Home</Link>
                     <Link to="/About">About</Link>
                 </div>
             </nav>
 
             <main>
-                <Outlet />
+                <Outlet/>
             </main>
 
         </>
